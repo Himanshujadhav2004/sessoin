@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="formstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="template6Rcss.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .header {
+            padding: 1rem 6%;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+        }
+
+        .header .logo {
+            font-size: 2rem;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        /* Center the form horizontally */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .form-step {
+            display: none;
+            transform-origin: initial;
+            animation: animate 0.80s;
+        }
+
+        /* Set the width of the inputs in the first and third rows */
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        /* Set the width of the inputs in the second row */
+        .input-groups {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .input-groups input[type=text] {
+            width: 48%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        .input-groups textarea[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        /* Set the width of the submit button */
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btnk {
+            margin-top: -3rem;
+        }
+
+        /* Add responsiveness for smaller screens */
+        @media screen and (max-width: 600px) {
+            .input-group input[type=text] {
+                width: 100%;
+                margin-block-end: 5px;
+                margin-block-start: 5px;
+            }
+
+
+        }
+
+        /* Center the wrapper div horizontally */
+        .wrappers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .wrapper-btn {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Add spacing between the inputs */
+        .input-groups {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+            /* Add margin to bottom of the input group */
+
+        }
+
+
+
+        @keyframes animate {
+            from {
+                transform: scale(1, 0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+        }
+
+        input[type=date] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        .btnk {
+            margin: 0;
+            text-align: center;
+            margin-top: 0.7rem;
+        }
+
+        /* Add responsiveness for smaller screens */
+        @media screen and (max-width: 600px) {
+            .input-groups input[type=text] {
+                width: 100%;
+            }
+
+            .btn-upload {
+
+                background-color: rgb(14, 78, 101);
+                border: 1px solid black;
+                padding: 10px;
+                cursor: pointer;
+                text-align: center;
+                margin-top: 0px;
+                margin-left: 0%;
+                margin: 10px auto;
+                border-radius: 30px;
+            }
+
+
+            .wrappers {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #row3 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+
+            }
+
+            label {
+                display: inline-block;
+                text-align: left;
+            }
+        }
+
+        label {
+            display: inline-block;
+            text-align: left;
+            justify-content: left;
+        }
+
+        #First-Name-input {
+            margin-inline-end: 10px;
+        }
+
+        #second-Name-input {
+            margin-inline-start: 10px;
+        }
+
+        #Country-input {
+            margin-inline-end: 10px;
+        }
+
+        #Pincode-input {
+            margin-inline-end: 10px;
+            margin-inline-start: 2%;
+        }
+
+        #City-input {
+
+            width: 200%;
+        }
+
+        #Phone-input {
+            margin-inline-end: 10px;
+
+        }
+
+        #Email-input {
+            margin-inline-start: 10px;
+        }
+
+        .container2 {
+            margin-top: 200px;
+        }
+
+        /* For screens larger than 510px */
+        /*Education-Form*/
+        .form-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .form-step {
+            display: none;
+            transform-origin: initial;
+            animation: animate 0.5s;
+        }
+
+        .form-step-active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-col {
+            flex: 1;
+            margin-right: 1em;
+        }
+
+        #img-container {
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* For screens smaller than 510px */
+        @media screen and (max-width: 510px) {
+            .form-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #Degree-input {
+                width: 50%;
+            }
+
+            .form-row {
+                flex-direction: column;
+                margin-bottom: 1em;
+            }
+
+            .form-col {
+                margin-right: 0;
+            }
+        }
+
+        #Degree-input {
+            max-width: 500px;
+        }
+
+        #labelProfession {
+            margin-left: -620px;
+            text-align: left;
+            display: block;
+        }
+
+        #first img {
+            height: 170px;
+
+        }
+
+        #profile-img {
+            width: 150px;
+        }
+
+        .btn-next {
+            color: white;
+            background-color: rgb(14, 78, 101);
+        }
+
+        .btn-next:hover {
+            color: rgb(0, 225, 255);
+            background-color: black;
+        }
+
+        .btn-prev {
+            color: white;
+            background-color: rgb(14, 78, 101);
+        }
+
+        .btn-prev:hover {
+            color: rgb(0, 225, 255);
+            background-color: black;
+        }
+
+        .btn {
+            background-color: rgb(14, 78, 101);
+        }
+
+        #info-user {
+            margin-bottom: 40px;
+            margin-top: -100px;
+        }
+
+        #cvggnbtn {
+            display: none;
+        }
+
+        #img-container {
+            width: 200px;
+            height: 210px;
+            border: 2px solid #dddddd;
+            cursor: pointer;
+
+
+        }
+
+        #previewText {
+            margin-top: -1.59rem;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #innerSpan {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #previewText:hover {
+            background-color: #dddddd66;
+        }
+
+        #photo {
+            display: none;
+            width: 200px;
+            height: 230px;
+        }
+
+        #inpImg {
+            display: none;
+        }
+
+        .btn-upload {
+
+            background-color: rgb(14, 78, 101);
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 25%;
+
+            border-radius: 30px;
+        }
+
+        #uimg {
+            padding: 0.5rem;
+            background-color: rgb(14, 78, 101);
+            border-radius: 5%;
+            color: #fff;
+            font-size: 1rem;
+            z-index: 999;
+        }
+
+        .templateimg {
+            border: 1px solid black;
+            height: 280px;
+            z-index: -1;
+        }
+
+        #TemplatePreiew {
+            margin-top: 10px;
+            cursor: pointer;
+            margin-left: 55px;
+            display: none;
+        }
+
+        #TemplatePreiews {
+            margin-top: 10px;
+            cursor: pointer;
+            margin-left: 55px;
+
+        }
+
+        #cv-template {
+            z-index: -10000;
+        }
+
+        #suggestions {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            max-height: 200px;
+            max-width: 200px;
+            overflow-y: scroll;
+            background-color: #f1f1f1;
+        }
+
+        .suggestion {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestion:hover {
+            background-color: #ddd;
+        }
+
+        .wrapper-btn {
+            margin-bottom: 20px;
+        }
+
+        .btn-prev {
+
+            margin-left: -250px;
+        }
+
+        .btn-next {
+
+            margin-left: 450px;
+        }
+
+        .form-step h1 {
+            margin-bottom: 50px;
+            margin-top: -100px;
+        }
+
+        #info-user {
+            display: none;
+        }
+
+        #work-expereince-add-btn {
+
+            margin-top: -200px;
+            background: transparent;
+            color: green;
+            border: none;
+        }
+
+        #work-expereince-add-btn-div {
+            margin-top: -40px;
+            margin-bottom: 10px;
+        }
+
+        #work-expereince-textareaT {
+            word-wrap: break-word;
+        }
+
+        .Editor-Template {
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+        }
+
+        #sidebar {
+
+            top: 200px;
+            left: 0px;
+            width: 200px;
+
+            background-color: #333;
+            color: #fff;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 10px;
+        }
+
+        #sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        .Colors-section {
+            font-size: 20px;
+            margin-bottom: 100px;
+
+
+        }
+
+        .addsectionparent {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+
+        }
+
+        #personalsectionadd {
+
+            width: 70%;
+            height: 10%;
+        }
+
+        .addpersonalsection {
+            margin-top: 70px;
+        }
+
+        #checkbox-form {
+            margin-top: -5%;
+        }
+
+        #Genrate-CV {
+            display: none;
+        }
+
+        #cvggnbtn {
+            display: none;
+        }
+
+        .Editor-Parent {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+
+        }
+
+        #addformstep {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        #Work-expereince-add-inputs-div2 {
+            margin-left: -200px;
+            display: none;
+        }
+
+        #Work-expereince-add-inputs-div3 {
+            margin-left: -200px;
+            display: none;
+        }
+
+        #work-expereince-Removebtn {
+            display: none;
+        }
+
+        #work-expereince-addbtn {
+            margin-left: -200px;
+            margin-top: -20px;
+            background-color: transparent;
+            color: green;
+            font-weight: 600;
+        }
+
+        #Education-Form-add2 {
+            margin-left: -200px;
+            display: none;
+        }
+
+        #Education-Form-add3 {
+            display: none;
+            margin-left: -200px;
+        }
+
+        #Education-Removebtn {
+            display: none;
+        }
+
+        #Education-addbtn {
+            margin-left: -200px;
+            margin-top: -20px;
+            background-color: transparent;
+            color: green;
+            font-weight: 600;
+        }
+
+        .btn-prev {
+
+            background-color: rgb(14, 78, 101)
+        }
+
+        .btn-next {
+            background-color: rgb(14, 78, 101);
+        }
+
+        .wrappers1 {
+            width: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: whitesmoke;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+            align-items: center;
+        }
+
+        .disppear {
+            animation: vanish 4s forwards;
+        }
+
+        @keyframes vanish {
+            100% {
+                opacity: 1;
+                visibility: hidden;
+            }
+        }
+
+        .form-step{
+    display: none;
+}
+#Educationinputsdiv{
+    display: block;
+}
+.btn-prev{
+  display: none;
+}
+
+        /* .delebtn{
+  margin-left: 240px;
+ margin-bottom: -30px;
+} */
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="loader">
+            <img src="load.gif" alt="">
+        </div>
+    </section>
+    <header class="header">
+        <a href="#" class="logo"><span style="color:rgb(14, 78, 101);"><b>Resume</b></span> B..</a>
+        <button class="btn btn-danger" onclick="logout()"
+            style="border: none; background-color: rgb(14, 78, 101);">Logout</button>
+    </header><br><br><br><br><br><br><br><br>
+
+    <div class="form-step form-step-active  ">
+        <center>
+            <div id="info-user">
+                <span id="user" class="message">Hello, < email-id></Email-id></span>
+                <div class="success"><span>Welcome to Resume-Builder You are successfully loged in!!!</span></div><br />
+
+            </div>
+        </center>
+        <center>
+            <h1>Personal Data</h1>
+        </center>
+
+        <!-- <button onclick="handleSubmit()">Submit</button> -->
+        <p id="nameT"></p>
+        </center>
+        <div class="wrappers">
+            <center>
+                <div id="img-container">
+
+                    <img src="" alt="" id="photo"> <br>
+                    <span id="previewText"><span id="innerSpan"><i class="fas fa-upload me-2"></i>Select
+                            Image</span></span>
+                    <center> <i class="fa fa-edit" id="changeicon" aria-hidden="true"
+                            style="font-size: 2.5rem; margin-top: -3rem;"></i></center>
+                    <div class="btnk">
+                    </div>
+            </center><br><br><br><br>
+
+
+            <!-- <button class="btn-upload" id="uploadBtn">Upload</button> -->
+
+
+
+            <form>
+                <div class="input-groups">
+                    <input type="text" name="input1" placeholder="First Name" id="First-Name-input"
+                        onkeypress="handleSubmit()">
+                    <input type="text" name="input2" placeholder="Last Name" id="Second-Name-input"
+                        onkeypress="handleSubmit()">
+                </div>
+
+                <input type="text" name="input3" placeholder="Profession" id="Profession-input"
+                    onkeypress="handleSubmit()">
+                <div class="input-groups" id="row3">
+                    <input type="text" name="input4" placeholder="Country" id="Country-input"
+                        onkeypress="handleSubmit()">
+                    <input type="text" name="input5" placeholder="Pincode" id="Pincode-input"
+                        onkeypress="handleSubmit()">
+                    <input type="text" name="input6" placeholder="City" id="City-input" onkeypress="handleSubmit()">
+                </div>
+                <div class="input-groups">
+                    <input type="text" name="input7" placeholder="Phone" id="Phone-input" onkeypress="handleSubmit()">
+                    <input type="text" name="input8" placeholder="Email" id="Email-input" onkeypress="handleSubmit()">
+                </div>
+                <div class="input-groups">
+                    <textarea cols="30" rows="10" type="text" id="Introduction-input" placeholder="Introduction Summary"
+                        onkeypress="handleSubmit()"></textarea>
+                </div>
+
+            </form>
+            <div class="wrapper-btn">
+                <div> <img class="templateimg" src="template6R.png" alt="" height="350px"
+                        onmouseover="templatepreviewbtn()">
+                    <button class="btn btn-primary" id="TemplatePreiew" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Preview</button>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="wrapper-btn">
+            <button class="btn btn-next" onclick="handleSubmit()">Next</button>
+
+
+        </div>
+    </div>
+
+    <div class="form-step">
+        <center>
+            <h1>Work Experience</h1>
+        </center>
+        <div class="wrappers">
+            <form class="myform" id="Work-expereince-add-inputs-div">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input1a">Jobtitle</label>
+                        <input type="text" id="Jobtitle-input" name="input1a" onkeypress="Workexperiencedata()">
+                    </div>
+                    <div class="form-col">
+                        <label for="input1a">Employer</label>
+                        <input type="text" id="Employer-input" name="input1b" onkeypress="Workexperiencedata()">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input2a">City</label>
+                        <input type="text" id="City-input-Workexperience" name="input2a"
+                            onkeypress="Workexperiencedata()">
+                    </div>
+                    <div class="form-col">
+                        <label for="input2b">Country</label>
+                        <input type="text" id="Country-input-Workexperience" name="input2b"
+                            onkeypress="Workexperiencedata()">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input3a">Start Date</label>
+                        <input type="date" id="StartDate-WorkEx-input" name="input3a" onchange="Workexperiencedata()">
+                    </div>
+                    <div class="form-col">
+                        <label for="input3b">End Date</label>
+                        <input type="date" id="EndDate-WorkEx-input" name="input3b" onchange="Workexperiencedata()">
+                    </div>
+                </div>
+
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="80" rows="10" type="text" id="Work-Ex-textarea"
+                                        placeholder="Introduction Summary" onkeypress="Workexperiencedata()"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+
+
+            <div class="wrapper-btn">
+                <div> <img class="templateimg" src="template6R.png" alt="" height="350px"
+                        onmouseover="templatepreviewbtn()">
+                    <div>
+
+                        <button class="btn btn-primary" id="TemplatePreiews" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Preview</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="wrappers">
+
+            <form class="myform" id="Work-expereince-add-inputs-div2">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input1a">Jobtitle</label>
+                        <input type="text" id="Jobtitle-input-w2" name="input1a" onkeypress="Workexperiencedata2()">
+                    </div>
+                    <div class="form-col">
+                        <div class="delebtn">
+                            <button id="Work-expereince-add-inputs-div2-delete-btn"
+                                onclick="deletebtnw2fnc()">Delete</button>
+                        </div>
+                        <label for="input1a">Employer</label>
+
+                        <input type="text" id="Employer-input-w2" name="input1b" onkeypress="Workexperiencedata2()">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input2a">City</label>
+                        <input type="text" id="City-input-Workexperience-w2" name="input2a"
+                            onkeypress="Workexperiencedata2()">
+                    </div>
+                    <div class="form-col">
+                        <label for="input2b">Country</label>
+                        <input type="text" id="Country-input-Workexperience-w2" name="input2b"
+                            onkeypress="Workexperiencedata2()">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input3a">Start Date</label>
+                        <input type="date" id="StartDate-WorkEx-input-w2" name="input3a"
+                            onchange="Workexperiencedata2()">
+                    </div>
+                    <div class="form-col">
+                        <label for="input3b">End Date</label>
+                        <input type="date" id="EndDate-WorkEx-input-w2" name="input3b" onchange="Workexperiencedata2()">
+                    </div>
+                </div>
+
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="80" rows="10" type="text" id="Work-Ex-textarea-w2"
+                                        placeholder="Introduction Summary"
+                                        onkeypress="Workexperiencedata2()"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="wrappers">
+
+            <form class="myform" id="Work-expereince-add-inputs-div3">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input1a">Jobtitle</label>
+                        <input type="text" id="Jobtitle-input-w3" name="input1a" onkeypress="Workexperiencedata3()">
+                    </div>
+                    <div class="form-col">
+                        <div class="delebtn">
+                            <button id="Work-expereince-add-inputs-div3-delete-btn"
+                                onclick="deletebtnw3fnc()">Delete</button>
+                        </div>
+                        <label for="input1a">Employer</label>
+
+                        <input type="text" id="Employer-input-w3" name="input1b" onkeypress="Workexperiencedata3()">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input2a">City</label>
+                        <input type="text" id="City-input-Workexperience-w3" name="input2a"
+                            onkeypress="Workexperiencedata3()">
+                    </div>
+                    <div class="form-col">
+                        <label for="input2b">Country</label>
+                        <input type="text" id="Country-input-Workexperience-w3" name="input2b"
+                            onkeypress="Workexperiencedata3()">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="input3a">Start Date</label>
+                        <input type="date" id="StartDate-WorkEx-input-w3" name="input3a"
+                            onchange="Workexperiencedata3()">
+                    </div>
+                    <div class="form-col">
+                        <label for="input3b">End Date</label>
+                        <input type="date" id="EndDate-WorkEx-input-w3" name="input3b" onchange="Workexperiencedata3()">
+                    </div>
+                </div>
+
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="80" rows="10" type="text" id="Work-Ex-textarea-w3"
+                                        placeholder="Introduction Summary"
+                                        onkeypress="Workexperiencedata3()"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="wrapper-btn">
+            <button class="btn" id="work-expereince-addbtn">+Add more</button>
+            <button class="btn" id="work-expereince-Removebtn">Delete</button>
+        </div>
+        <div class="wrapper-btn">
+            <button class="btn btn-prev">previous</button>
+            <button class="btn btn-next" onclick="workexperinceformfnc()">Next</button>
+        </div>
+    </div>
+
+    <div class="form-step" id="Educationinputsdiv">
+        <center>
+            <h1>Education Information</h1>
+        </center>
+        <div class="wrappers" id="Education-Form-add">
+            <form class="myform">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="School Name">School Name</label>
+                        <input type="text" id="School-Name-input" name="input1a">
+                    </div>
+                    <div class="form-col">
+                        <label for="School-Location-input">School Location</label>
+                        <input type="text" id="School-Location-input" name="input1b">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Degree-input">Degree</label>
+                        <input type="text" id="Degree-input" name="input2a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Field-of-Study">Field of Study</label>
+                        <input type="text" id="Field-of-Study" name="input2b">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Graduation-Start-Date">Graduation Start Date</label>
+                        <input type="date" id="Graduation-Start-Date" name="input3a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Graduation-End-Date">Graduation End Date</label>
+                        <input type="date" id="Graduation-End-Date" name="input3b">
+                    </div>
+                </div>
+
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="90" rows="10" type="text" id="Education-textarea"
+                                        placeholder="Introduction Summary"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <div class="wrapper-btn">
+                <div> <img class="templateimg" src="template6R.png" alt="" height="350px"
+                        onmouseover="templatepreviewbtn()">
+                    <div>
+
+                        <button class="btn btn-primary" id="TemplatePreiews" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Preview</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="wrappers">
+            <form class="myform" id="Education-Form-add2" onkeypress="academicdata2()">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="School-Name-input2">School Name</label>
+                        <input type="text" id="School-Name-input2" onkeypress="academicdata2()" name="input1a">
+                    </div>
+                    <div class="form-col">
+                        <div class="delebtn">
+                            <button id="education-add-inputs-div2-delete-btn2"
+                                onclick="academicdatadeletefncdeletebtn()">Delete</button>
+                        </div>
+                        <label for="School-Location-input2">School Location</label>
+
+                        <input type="text" id="School-Location-input2" onkeypress="academicdata2()" name="input1b">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Degree-input2">Degree</label>
+                        <input type="text" id="Degree-input2" onkeypress="academicdata2()" name="input2a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Field-of-Study2">Field of Study</label>
+                        <input type="text" id="Field-of-Study2" onkeypress="academicdata2()" name="input2b">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Graduation-Start-Date2">Graduation Start Date</label>
+                        <input type="date" id="Graduation-Start-Date2" onchange="academicdata2()" name="input3a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Graduation-End-Date2">Graduation End Date</label>
+                        <input type="date" id="Graduation-End-Date2" onchange="academicdata2()" name="input3b">
+                    </div>
+                </div>
+
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="90" rows="10" type="text" id="Education-textarea2"
+                                        placeholder="Introduction Summary"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+
+        <div class="wrappers">
+            <form class="myform" id="Education-Form-add3">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="School-Name-input3">School Name</label>
+                        <input type="text" id="School-Name-input3" onkeypress="academicdata3()" name="input1a">
+                    </div>
+                    <div class="form-col">
+                        <div class="delebtn">
+                            <button id="education-add-inputs-div2-delete-btn3"
+                                onclick="academicdatadeletefncdeletebtn3()">Delete</button>
+                        </div>
+                        <label for="School-Location-input3">School Location</label>
+
+                        <input type="text" id="School-Location-input3" onkeypress="academicdata3()" name="input1b">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Degree-input3">Degree</label>
+                        <input type="text" id="Degree-input3" onkeypress="academicdata3()" name="input2a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Field-of-Study3">Field of Study</label>
+                        <input type="text" id="Field-of-Study3" onkeypress="academicdata3()" name="input2b">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Graduation-Start-Date3">Graduation Start Date</label>
+                        <input type="date" id="Graduation-Start-Date3" onchange="academicdata3()" name="input3a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Graduation-End-Date3">Graduation End Date</label>
+                        <input type="date" id="Graduation-End-Date3" onchange="academicdata3()" name="input3b">
+                    </div>
+                </div>
+
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="90" rows="10" type="text" onkeypress="academicdata3()"
+                                        id="Education-textarea3" placeholder="Introduction Summary"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="wrapper-btn">
+            <button class="btn" id="Education-addbtn">+Add more</button>
+            <button class="btn" id="Education-Removebtn">Delete</button>
+        </div>
+        <div class="wrapper-btn">
+            <button class="btn btn-prev">previous</button>
+            <a href="Template6Editor.html">
+            <button class="btn btn-next" onclick=" academicdataformfnc()">Next</button>
+        </a>
+            <button class="btn btn-primary " id="Genrate-CV" onclick="">Generate CV</button>
+
+            <button class="btn btn-primary " id="cvggnbtn">Print CV</button>
+        </div>
+    </div>
+
+
+    <div class="form-step">
+        <center>
+            <h1>Skill</h1>
+        </center>
+        <div class="wrappers">
+            <form class="myform">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Skill-input1">skill1</label>
+                        <input type="text" id="Skill-input1" onkeypress="skillinfo()" name="input1a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Skill-input2">skill2</label>
+                        <input type="text" id="Skill-input2" onkeypress="skillinfo()" name="input1b">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="Skill-input3">skill3</label>
+                        <input type="text" id="Skill-input3" onkeypress="skillinfo()" name="input2a">
+                    </div>
+                    <div class="form-col">
+                        <label for="Skill-input4">skill4</label>
+                        <input type="text" id="Skill-input4" onkeypress="skillinfo()" name="input2b">
+                    </div>
+                </div>
+
+
+
+
+
+            </form>
+            <div class="wrapper-btn">
+                <div> <img class="templateimg" src="template6R.png" alt="" height="350px"
+                        onmouseover="templatepreviewbtn()">
+                    <div>
+
+                        <button class="btn btn-primary" id="TemplatePreiews" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Preview</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="wrapper-btn">
+            <button class="btn btn-prev">previous</button>
+            <button class="btn btn-next" onclick="skillinfo()">Next</button>
+        </div>
+    </div>
+
+
+    <div class="form-step  " id="checkbox-form">
+
+        <div class="addsectionparent">
+
+            <div class="addcheckbox">
+                <h3 style="color: blue; font-weight: 100;">Do you have anything else to add?</h3>
+                <p>These sections are optional.</p>
+                <input type="checkbox" name="" id="Accomplishments">
+                <label for="Accomplishments">Accomplishments</label>
+                <br>
+                <br>
+                <input type="checkbox" name="" id="Affiliations">
+                <label for="Affiliations">Affiliations</label>
+                <br>
+                <br>
+                <input type="checkbox" name="" id="Additional-Information">
+                <label for="Additional-Information">Additional Information</label>
+                <br>
+                <br>
+                <input type="checkbox" name="" id="Software">
+                <label for="Software">Software</label>
+                <br>
+                <br>
+                <input type="checkbox" name="" id="Languages">
+                <label for="Languages">Languages</label>
+
+                <br>
+                <br>
+                <input type="checkbox" name="" id="Certifications">
+                <label for="Certifications">Certifications</label>
+                <br>
+                <br>
+                <input type="checkbox" name="" id="Interests">
+                <label for="Interests">Interests</label>
+            </div>
+
+            <div class="addpersonalsection">
+
+                <input type="checkbox" name="" id="perstional-section">
+                <label for="perstional-section">Add your Own</label>
+                <br> <input type="text" id="personalsectionaddinput">
+            </div>
+            <div class="wrapper-btn">
+                <div> <img class="templateimg" src="R5.png" alt="" height="350px"
+                        onmouseover="templatepreviewbtn()">
+                    <div>
+
+                        <button class="btn btn-primary" id="TemplatePreiews" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Preview</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="wrapper-btn">
+
+            <button class="btn btn-prev">previous</button>
+
+            <button class="btn btn-next" onclick="addsection()">Next</button>
+
+
+        </div>
+    </div>
+    <div class="form-step">
+        <div id="addformstep">
+            <div id="Accomplishmentsdivid">
+                <center>
+                    <h1>Accomplishments</h1>
+                </center>
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="90" rows="10" type="text" id="Accomplishments-textarea"
+                                        onkeypress=" Accomplishmentinfo()"
+                                        placeholder="Introduction Summary"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Affiliationsiddiv">
+                <center>
+                    <h1>Affiliations</h1>
+                </center>
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="90" rows="10" type="text" id="Affiliations-textarea"
+                                        onkeypress="Affiliationsinfo()" placeholder="Introduction Summary"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Additional-Informationid">
+                <center>
+                    <h1>Additional-Information</h1>
+                </center>
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="90" rows="10" type="text" id="Additional-Information-textarea"
+                                        onkeypress="AdditionalInformationinfo()"
+                                        placeholder="Introduction Summary"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Softwarediv">
+                <center>
+                    <h1>Software</h1>
+                </center>
+                <center>
+                    <form class="myform">
+                        <div class="wrappers">
+                            <div class="form-row">
+                                <div class="wrappers1">
+
+                                    <div class="form-col">
+                                        <label for="Softwareinput1">Software 1</label>
+                                        <input type="text" id="Softwareinput1" onkeypress="softwareinfo()"
+                                            name="input1a">
+                                        <label for="Softwareinput2">Software 2</label>
+                                        <input type="text" id="Softwareinput2" onkeypress="softwareinfo()"
+                                            name="input1a">
+                                    </div>
+
+                                    <div class="wrappers">
+                                        <div class="form-col">
+                                            <label for="Softwareinput3">Software 3</label>
+                                            <input type="text" id="Softwareinput3" onkeypress="softwareinfo()"
+                                                name="input1b">
+                                            <label for="Softwareinput4">Software 4</label>
+                                            <input type="text" id="Softwareinput4" onkeypress="softwareinfo()"
+                                                name="input1a">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </center>
+            </div>
+
+
+            <div id="Languagesdiv">
+                <center>
+                    <h1>Languages</h1>
+                </center>
+                <form class="myform">
+                    <center>
+                        <div class="wrappers">
+                            <div class="form-row">
+                                <div class="wrappers1">
+                                    <div class="form-col">
+
+                                        <label for="Language1">Language 1</label>
+                                        <input type="text" id="Language1" onkeypress="Languageinfo()" name="input1a">
+                                        <label for="Language2">Language 2</label>
+                                        <input type="text" id="Language2" onkeypress="Languageinfo()" name="input1a">
+
+                                    </div>
+
+                                    <div class="wrappers">
+                                        <div class="form-col">
+
+                                            <label for="Language3">Language 3</label>
+                                            <input type="text" id="Language3" onkeypress="Languageinfo()"
+                                                name="input1b">
+                                            <label for="Language4">Language 4</label>
+                                            <input type="text" id="Language4" onkeypress="Languageinfo()"
+                                                name="input1a">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+                </form>
+
+
+            </div>
+
+
+
+            <div id="Certificationdiv">
+                <center>
+                    <h1>Certification</h1>
+                </center>
+
+                <div class="wrappers">
+                    <center>
+                        <div class="form-row">
+                            <div class="wrappers">
+                                <div class="form-col">
+                                    <label for="CertificationDate">Certification Date</label>
+                                    <input type="date" id="CertificationDate" onchange="Certificationinfo()"
+                                        name="input3a">
+
+                                </div>
+                                <div class="form-col">
+                                    <label for="Certificationinfo">Certification info</label>
+                                    <input type="text" id="Certificationinfo" onkeypress="Certificationinfo()"
+                                        name="input1b">
+
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                </form>
+
+
+            </div>
+
+            <div id="user-added-section">
+                <center>
+                    <h1 id="user-added-sectionh1">user-added-section</h1>
+                </center>
+
+                <div class="wrapper-btn">
+
+                    <div class="textarea-div">
+
+                        <div class="input-groups">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <textarea cols="90" rows="10" type="text" id="user-added-section-textarea"
+                                        onkeypress="personalsectioninfo()"
+                                        placeholder="Introduction Summary"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Interestsdiv">
+                <center>
+                    <h1>Interests</h1>
+                </center>
+
+                <div class="wrappers">
+                    <center>
+                        <div class="form-row">
+
+                            <div class="wrappers">
+                                <div class="form-col" id="Interstert-form-div">
+
+                                    <label for="Interests1">Interests1</label>
+                                    <input type="text" id="Interests1" onkeypress="Interestsinfo()" name="input3a">
+                                </div>
+                                <div class="form-col">
+                                    <label for="Interests2">Interests2</label>
+                                    <input type="text" id="Interests2" onkeypress="Interestsinfo()" name="input3a">
+                                </div>
+                                <div class="form-col">
+                                    <label for="Interests3">Interests3</label>
+                                    <input type="text" id="Interests3" onkeypress="Interestsinfo()" wname="input3a">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </center>
+                </div>
+
+
+            </div>
+
+            <center>
+                <h5 style="color:darkgreen;">Finalize the Resume</h5>
+            </center>
+            <div class="wrapper-btn">
+
+                <button class="btn btn-prev" id="addsectprevbtn">previous</button>
+                <a href="Template6Editor.html"><button class="btn btn-next"
+                        onclick="addsectionformfnc()">Next</button></a>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Resume Preview</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="container" id="cv-template">
+                        <div class="md-12" id="row2">
+                            <div class="container" id="containerheader">
+                                <h1 id="FirstnameT">Himanshu</h1>
+                                <p id="ProfessionT">Software</p>
+                              
+                            </div>
+                            <!-- <p class="" id="IntroductionT">To seek and maintain full-time position that offers
+                                professional challenges
+                                utilizing interpersonal skills, excellent time management and problem-solving skills.
+                            </p> -->
+                            <div class=" text-center background  " id="first">
+
+                                <div class="container " id="presnol-info">
+                            <img src="user.png"  alt="" id="photo2">
+                                </div></div>
+                            
+
+                        </div>
+                        <p class="" id="IntroductionT">To seek and maintain full-time position that offers
+                            professional challenges
+                            utilizing interpersonal skills, excellent time management and problem-solving skills.
+                        </p> 
+                
+                        
+
+                        <div class="row1">
+
+                            <!-- <div class=" text-center background  " id="first">
+
+                                <div class="container mt-3" id="presnol-info">
+
+                                    <img src="NFT.png" class=" mt-4" alt="" id="photo2">
+                                    <h3 id="contactT">Contact </h3>
+                                    <p id="addressT"> <b>Addess</b> </p> -->
+                                    <!-- <p id="addressTinfo2"></p>
+                                    <p id="CountryT"></p>
+                                    <p id="CityT"></p> -->
+                                    <!-- <p id="pincodeT"></p>
+                                    <p id="PhoneT"> <b>Phone</b> </p>
+                                    <p id="PhoneNumberT"></p>
+                                    <p id="EmailT"> <b>E-mail</b> </p>
+                                    <p id="EmailidT"></p>
+
+                                </div>
+
+                                <div class="container mt-3" id="SkillT">
+                                    <h3 id="SkillT-H">Skill </h3>
+                                    <p id="skill1ST"></p>
+                                    <p id="skill2ST"></p>
+                                    <p id="skill3ST"></p>
+                                    <p id="skill4ST"></p>
+
+
+
+                                </div>
+
+                                <div class="container mt-3" id="LanguagesT">
+                                    <h3 id="LanguagesT-H">Language </h3>
+                                    <p id="Language1T">java</p>
+                                    <p id="Language2T">c++</p>
+                                    <p id="Language3T">c</p>
+                                    <p id="Language4T">js</p>
+
+
+                                </div>
+
+                                <div class="container mt-3" id="SoftwareT">
+                                    <h3 id="SoftwareT-H">Software </h3>
+
+
+                                    <p id="Skill1T">java</p>
+                                    <p id="Skill2T">c++</p>
+                                    <p id="Skill3T">c</p>
+                                    <p id="Skill4T">js</p>
+
+                                </div>
+
+
+                            </div> -->
+                            <div class="right-side-contain" id="second">
+
+                                <div class="card " id="Work-Experience-Div">
+                                    <div class="card-header " id="abc">
+                                        <h3><i class="fa fa-futbol" style="font-size:26px"></i>  Work History</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row1" id="row1id">
+                                                <!-- <div id="first">
+                                                    <p id="Work-Ex-date">22/01/22</p>
+                                                </div> -->
+
+                                                <div id="secondT">
+                                                    <h5 id="JobtitleT">Software Engineer</h5>
+
+                                                    <p id="work-ex-address">Shirpur,India</p>
+
+                                                    <p id="work-expereince-textareaT">Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit.
+                                                        Quo, tempora!</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="row1" id="work-ex-id-2T">
+                                                <div id="first">
+                                                    <p id="Work-Ex-date-w2">22/01/22</p>
+                                                </div>
+
+                                                <div id="secondT">
+                                                    <h5 id="JobtitleT-w2">Software Engineer</h5>
+
+                                                    <p id="work-ex-address-w2">Shirpur,India</p>
+
+                                                    <p id="work-expereince-textareaT-w2">Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit.
+                                                        Quo, tempora!</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="row1" id="work-ex-id-3T">
+                                                <div id="first">
+                                                    <p id="Work-Ex-date-w3">22/01/22</p>
+                                                </div>
+
+                                                <div id="secondT">
+                                                    <h5 id="JobtitleT-w3">Software Engineer</h5>
+
+                                                    <p id="work-ex-address-w3">Shirpur,India</p>
+
+                                                    <p id="work-expereince-textareaT-w3">Lorem ipsum dolor sit amet
+                                                        consectetur adipisicing elit.
+                                                        Quo, tempora!</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mt-4" id="cardEducationid">
+                                    <div class="card-header " id="abc">
+                                        <h3><i class="fa fa-futbol" style="font-size:26px"></i>  Education</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row1">
+                                                <div id="first">
+                                                    <p id="School-Ex-date">22/01/22</p>
+                                                </div>
+
+                                                <div id="secondT">
+                                                    <h5 id="DegreeT">Software Engineer</h5>
+
+                                                    <p id="School-Name-Addrres">Himanshu,Shirpur</p>
+
+                                                    <p id="Education-textareaT">Lorem ipsum dolor, sit amet consectetur
+                                                        adipisicing elit.
+                                                        Asperiores, perspiciatis</p>
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card-body" id="education-ex-id-2T">
+                                        <div class="container">
+                                            <div class="row1">
+                                                <div id="first">
+                                                    <p id="education-date-2T">22/01/22</p>
+                                                </div>
+
+                                                <div id="secondT">
+                                                    <h5 id="DegreeT2">Software Engineer</h5>
+
+                                                    <p id="School-Name-Addrres2">Himanshu,Shirpur</p>
+
+                                                    <p id="Education-textareaT2">Lorem ipsum dolor, sit amet consectetur
+                                                        adipisicing elit.
+                                                        Asperiores, perspiciatis</p>
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card-body" id="education-ex-id-3T">
+                                        <div class="container">
+                                            <div class="row1">
+                                                <div id="first">
+                                                    <p id="education-date-3T">22/01/22</p>
+                                                </div>
+
+                                                <div id="secondT">
+                                                    <h5 id="DegreeT3">Software Engineer</h5>
+
+                                                    <p id="School-Name-Addrres3">Himanshu,Shirpur</p>
+
+                                                    <p id="Education-textareaT3">Lorem ipsum dolor, sit amet consectetur
+                                                        adipisicing elit.
+                                                        Asperiores, perspiciatis</p>
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--Amcomplise-->
+                                <div class="card mt-4" id="AcomplisTemplateDividT">
+                                    <div class="card-header " id="abc">
+                                        <h3><i class="fa fa-futbol" style="font-size:26px"></i>  Accomplishments</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row1">
+                                                <div id="first">
+
+
+                                                    <div id="secondT">
+
+
+                                                        <p id="Acomplis-textareaT">Lorem ipsum dolor, sit amet
+                                                            consectetur adipisicing elit.
+                                                            Asperiores, perspiciatis</p>
+
+
+                                                    </div>
+
+                                                </div>
+                                                <!-- <ul id="weT">
+      <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel iste voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil aperiam?</li>
+    </ul> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="card mt-4" id="CertificationTdiv">
+                                    <div class="card-header " id="abc">
+                                        <h3><i class="fa fa-futbol" style="font-size:26px"></i> Certification</h3>
+                                    </div>
+                                    <!--                   
+                  <div class="card-body">
+                    <div id="first"><p id="CertificationDate">22/01/22</p></div>
+                    <div id="secondT">
+                      <p id="CertificationT">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel iste voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil aperiam?</p>
+                    </div>
+                  </div> -->
+                                    <div class="container">
+                                        <div class="row1" id="row1id">
+                                            <div id="first">
+                                                <p id="CertificationDateinfo">22/01/22</p>
+                                            </div>
+
+                                            <div id="secondT">
+
+
+                                                <p id="CertificationT">Lorem ipsum dolor sit amet consectetur
+                                                    adipisicing elit. Quo, tempora!
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card mt-4" id="AffiliationsTdiv">
+                                    <div class="card-header " id="abc">
+                                        <h3><i class="fa fa-futbol" style="font-size:26px"></i>  Affiliations</h3>
+                                    </div>
+                                    <div class="card-body">
+
+                                        <p id="AffiliationsT">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            Vel iste
+                                            voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil
+                                            aperiam?</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="card mt-4" id="AdditionalInformationdivT">
+                                    <div class="card-header " id="abc">
+                                        <h3><i class="fa fa-futbol" style="font-size:26px"></i> Additional-Information</h3>
+                                    </div>
+                                    <div class="card-body">
+
+                                        <p id="Additional-InformationT">Lorem ipsum, dolor sit amet consectetur
+                                            adipisicing elit. Vel iste
+                                            voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil
+                                            aperiam?</p>
+
+                                    </div>
+                                </div>
+                                <div class="card mt-4" id="IntersetdivT">
+                                    <div class="card-header " id="abc">
+                                        <h3><i class="fa fa-futbol" style="font-size:26px"></i> Interst</h3>
+                                    </div>
+                                    <div class="card-body">
+
+                                        <p id="IntersetdivT1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            Vel iste
+                                            voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil
+                                            aperiam?</p>
+                                        <p id="IntersetdivT2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            Vel iste
+                                            voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil
+                                            aperiam?</p>
+                                        <p id="IntersetdivT3">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            Vel iste
+                                            voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil
+                                            aperiam?</p>
+
+                                    </div>
+                                </div>
+                                <div class="card mt-4" id="personal-section-divT">
+                                    <div class="card-header " id="abc">
+                                        <h3 id="user-section-heading">Your section</h3>
+                                    </div>
+                                    <div class="card-body">
+
+                                        <p id="personal-section-T">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                            elit. Vel iste
+                                            voluptatibus rerum possimus ipsa obcaecati asperiores accusantium sed nihil
+                                            aperiam?</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" text-center background  " id="first">
+
+                                <div class="container mt-3" id="presnol-info">
+
+                                    <!-- <img src="user.png" class=" mt-4" alt="" id="photo2"> -->
+                                    <h3 id="contactT">Contact </h3>
+                                    <p id="addressT"> <b>Addess</b> </p>
+                                    <!-- <p id="addressTinfo2"></p>
+                                    <p id="CountryT"></p>
+                                    <p id="CityT"></p> -->
+                                    <p id="pincodeT"></p>
+                                    <p id="PhoneT"> <b>Phone</b> </p>
+                                    <p id="PhoneNumberT"></p>
+                                    <p id="EmailT"> <b>E-mail</b> </p>
+                                    <p id="EmailidT"></p>
+
+                                </div>
+
+                                <div class="container mt-3" id="SkillT">
+                                    <h3 id="SkillT-H"><i class="fa fa-futbol" style="font-size:26px"></i> Skill </h3>
+                                    <p id="skill1ST"></p>
+                                    <p id="skill2ST"></p>
+                                    <p id="skill3ST"></p>
+                                    <p id="skill4ST"></p>
+
+
+
+                                </div>
+
+                                <div class="container mt-3" id="LanguagesT">
+                                    <h3 id="LanguagesT-H">Language </h3>
+                                    <p id="Language1T">java</p>
+                                    <p id="Language2T">c++</p>
+                                    <p id="Language3T">c</p>
+                                    <p id="Language4T">js</p>
+
+
+                                </div>
+
+                                <div class="container mt-3" id="SoftwareT">
+                                    <h3 id="SoftwareT-H">Software </h3>
+
+
+                                    <p id="Skill1T">java</p>
+                                    <p id="Skill2T">c++</p>
+                                    <p id="Skill3T">c</p>
+                                    <p id="Skill4T">js</p>
+
+                                </div>
+
+
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        const prevBtns = document.querySelectorAll(".btn-prev");
+        const nextBtns = document.querySelectorAll(".btn-next");
+        const formSteps = document.querySelectorAll(".form-step");
+
+        let formStepsNum = 0;
+
+        nextBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                formStepsNum++;
+                updateFormSteps();
+            });
+        });
+
+        prevBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                formStepsNum--;
+                updateFormSteps();
+            });
+        });
+
+        function updateFormSteps() {
+            formSteps.forEach((formStep) => {
+                formStep.classList.contains("form-step-active") &&
+                    formStep.classList.remove("form-step-active");
+            });
+
+            formSteps[formStepsNum].classList.add("form-step-active");
+        }
+
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="firebase.js"></script>
+    <script src="template6Rjs.js"></script>
+    <script>
+        var loader = document.querySelector(".loader")
+
+        window.addEventListener("load", vanish);
+
+        function vanish() {
+            loader.classList.add("disppear");
+        }
+    </script>
+</body>
+
+</html>

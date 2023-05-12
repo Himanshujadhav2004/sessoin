@@ -1,0 +1,376 @@
+/* #cv-form{
+   display: none;
+} */
+
+.background{
+    background-color:white;
+    color: black;
+ }
+ 
+ /* .row1{
+    display: flex;
+    flex: auto;
+ grid-gap: 20px;
+
+ 
+ } */
+ #firsts{
+    min-width: 200px;
+    margin-left: -12px;
+ 
+ }
+ 
+ .card{
+    min-width: 300px;
+ }
+ #hidetemplatebtn{
+ display: none;
+ }
+ #NameT2{
+    text-align: justify;
+ }
+ #NameT{
+    font-size: 35px;
+    text-align: justify;
+ }
+ #presnol-info{
+    text-align: left;
+ }
+
+ #addressT{
+    font-weight: 900px;
+    font-size: 15px;
+    
+ }
+ #pincodeT{
+    text-align: left;
+    word-wrap: break-word;
+      margin-top: -10px;
+ }
+ #addressTinfo{
+    text-align: left;
+  word-wrap: break-word;
+    margin-top: -10px;
+ }
+ #addressTinfo2{
+    text-align: left;
+  word-wrap: break-word;
+    margin-top: -10px;
+ }
+ #PhoneNumberT{
+    text-align: left;
+    word-wrap: break-word;
+      margin-top: -10px;
+ }
+ #EmailidT{
+    text-align: left;
+    word-wrap: break-word;
+      margin-top: -10px;
+ }
+ .card{
+    
+    border: none;
+ }
+ #abc{
+    border-top: 1px solid black ;
+ border-radius: 0;
+ color:black;
+ background-color: white;
+    border-bottom: 1px solid black ;
+
+ }
+ .objectiveT
+ {
+ 
+   text-align: justify;
+ }
+ 
+ @media(max-width: 768px) {
+    /* .row1{
+     justify-content: space-around;
+    
+    } */
+  }
+  
+  #LastnameT{
+    margin-top: -10px;
+  }
+  /* #cv-form{
+    display: none;
+ } */
+ /* .myimg{
+   
+    border: 1px solid red;
+ } */
+ #firsts{
+    background-color:rgb(39, 39, 80);
+ 
+    color: white;
+ }
+ 
+ .row1{
+    display: flex;
+ grid-gap: 20px;
+ 
+ 
+ }
+ #first{
+    min-width: 200px;
+    margin-left: -12px;
+ }
+ 
+ .card{
+    min-width: 200px;
+ }
+ /* #hidetemplatebtn{
+ display: none;
+ } */
+ #NameT2{
+    text-align: justify;
+ }
+ #NameT{
+    font-size: 35px;
+    text-align: justify;
+ }
+ #presnol-info{
+    text-align: left;
+ }
+ #contactT{background: #002b50;
+    border-bottom: none;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    margin-left: -10px;
+    color: white;
+    padding-bottom:8px;
+ }
+
+ #SkillT-H{
+    background: #002b50;
+    border-bottom: none;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    margin-left: -10px;
+    color: white;
+    padding-bottom:8px;
+}
+
+#LanguagesT-H{
+    background: #002b50;
+    border-bottom: none;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    margin-left: -10px;
+    color: white;
+    padding-bottom:8px;
+    text-align: left;
+}
+
+#SoftwareT-H{
+    background: #002b50;
+    border-bottom: none;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    margin-left: -10px;
+    color: white;
+    padding-bottom:8px;
+    text-align: left;
+}
+ #addressT{
+    font-weight: 300px;
+    font-size: 15px;
+ }
+ #addressTinfo{
+    text-align: left;
+  word-wrap: break-word;
+
+    margin-top: -10px;
+ }
+ #card{
+    
+    border: none;
+ }
+ #abc{
+    border-top: none;
+ border-radius: 0;
+ color:#003868;
+ border-top: 1px solid black ;
+ background-color: white;
+    border-bottom: 1px solid black ;
+ }
+ #presnol-info{
+    max-width: 200px;
+ }
+ #second{
+    max-width: 560px;
+ }
+ #work-expereince-textareaT{
+    width: 300px;
+    
+ }
+ #work-expereince-textareaT-w2{
+   width: 300px;
+
+ }
+ #Education-textareaT{
+    width: 300px;
+ }
+ #IntroductionT{
+    word-wrap: break-word;
+ }
+ 
+  .container h1{
+    word-wrap: break-word;
+  }
+ #row2{
+    /* background-color: #343434; */
+margin: 0;
+padding: 0;
+ }
+ 
+/* #row1id{
+   display: flex;
+   flex: auto;
+grid-gap: 20px;
+flex-direction: row;
+} */
+#containerheader{
+    padding: 0;
+    margin: 0;
+}
+
+#SoftwareT p{
+   text-align: left;
+   font-weight: 500;
+}
+#LanguagesT p{
+   text-align: left;
+   font-weight: 500;
+}
+
+#SkillT{
+   text-align: left;
+   font-weight: 500;
+}
+#work-ex-id-2T{
+   display:flex;
+   
+}
+element.style {
+   display:none;
+}
+.delebtn{
+   margin-left: 240px;
+  margin-bottom: -30px;
+  
+ }
+
+#addsectprevbtn{
+   margin-left: -20px;
+}
+#Work-expereince-add-inputs-div2-delete-btn{
+   color:red;
+   background-color: transparent;
+   border: none;
+   font-weight: 600;
+}
+#Work-expereince-add-inputs-div3-delete-btn{
+   color: red;
+   background-color: transparent;
+   
+   font-weight: 600;
+   border: none;
+}
+
+
+#education-add-inputs-div2-delete-btn3{
+   color: red;
+   background-color: transparent;
+   border: none;
+   font-weight: 600;
+}
+#education-add-inputs-div2-delete-btn2{
+   color: red;
+   background-color: transparent;
+   border: none;
+   font-weight: 600;
+}
+
+#Education-textareaT2{
+   width: 300px;
+}
+#Education-textareaT3{
+   width: 300px;
+}
+#SkillT p{
+   word-wrap: break-word;
+}
+
+#LanguagesT{
+   word-wrap: break-word;
+}
+
+#SoftwareT{
+   word-wrap: break-word;
+}
+
+#CertificationT{
+   width: 300px;
+}
+
+#CertificationdivT{
+   margin-left: 20px;
+}
+
+#photo2{
+    height: 200px;
+    width: 175px;
+  
+}
+
+.firstsectiondiv{
+    background: #003868;
+
+}
+
+#skill1ST{
+    color: rgb(216, 216, 216);
+    margin-left: -30px;
+}
+#skill2ST{
+    color: rgb(216, 216, 216);
+    margin-left: -30px;
+}
+#skill3ST{
+    color: rgb(216, 216, 216);
+    margin-left: -30px;
+}
+#skill4ST{
+    color: rgb(216, 216, 216);
+    margin-left: -30px;
+}
+
+#skill1STLi{
+    margin-left: -14px;
+}
+
+#SkillT ul li{
+    color: rgb(216, 216, 216);
+    padding: -10px;
+}
+
+#presnol-info h1{
+    color: white;
+}
+#presnol-info h3{
+    color: white;
+}
+#presnol-info p{
+    color: white;
+}
+
+#LanguagesT p{
+    color: rgb(216, 216, 216); 
+}
+#SoftwareT p{
+    color: rgb(216, 216, 216); 
+}
